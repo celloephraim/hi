@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>from cello</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Trebuchet MS", sans-serif;
+      background: linear-gradient(135deg, #ffe0ec, #fff0f5, #ffd6e7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      color: #853653;
+    }
+
+    .card {
+      width: min(92%, 520px);
+      padding: 35px 22px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid white;
+      border-radius: 30px;
+      box-shadow: 0 15px 50px #d66b9530;
+      position: relative;
+      z-index: 2;
+      margin: 25px 0;
+    }
+
+    .big-heart {
+      font-size: 65px;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    h1 {
+      font-size: clamp(27px, 6vw, 38px);
+      margin: 15px 0;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    .subtitle {
+      color: #bd7290;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    button {
+      border: none;
+      border-radius: 50px;
+      padding: 15px 27px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.35s ease,
+                  box-shadow 0.35s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .yes {
+      color: white;
+      background: linear-gradient(135deg, #ff77a8, #ff4385);
+      box-shadow: 0 7px 20px #ff77a855;
+    }
+
+    .yes:hover {
+      box-shadow: 0 10px 25px #ff438566;
+    }
+
+    .yes:active {
+      transform: scale(0.95);
+    }
+
+    .small-note {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #c28aa0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Final love letter */
+
+    #finalScreen {
+      animation: reveal 1.2s ease both;
+    }
+
+    .letter {
+      text-align: left;
+      background: #fff6fa;
+      border: 1px solid #ffd5e5;
+      border-radius: 20px;
+      padding: 22px;
+      margin-top: 25px;
+      color: #85425e;
+      line-height: 1.9;
+    }
+
+    .letter p {
+      margin: 0 0 18px;
+    }
+
+    .letter p:last-child {
+      margin-bottom: 0;
+    }
+
+    .signature {
+      text-align: right;
+      font-weight: bold;
+      color: #e64d83;
+    }
+
+    .restart {
+      background: white;
+      color: #e64d83;
+      border: 1px solid #ffc3d9;
+      margin-top: 22px;
+      font-size: 14px;
+    }
+
+    /* Floating hearts */
+
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatUp linear forwards;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: scale(0.2) rotate(-5deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card" id="mainCard">
+
+    <section id="questionScreen">
+      <div class="big-heart">💗</div>
+
+      <p class="subtitle">from cello</p>
+
+      <h1>may i be your boyfriend? </h1>
+
+      <p>
+        ive been wanting to ask you this for a while
+        so here goes nothing
+      </p>
+
+      <div class="buttons">
+        <button class="yes" onclick="sayYes()">
+          yess
+        </button>
+
+        <button class="yes" onclick="sayYes()">
+          yess
+        </button>
+      </div>
+
+      <p class="small-note">
+        both buttons are the right answer hehe 
+      </p>
+    </section>
+
+    <section id="finalScreen" class="hidden">
+      <div class="big-heart">💝</div>
+
+      <h1>thank god u said yes hehe</h1>
+
+      <p>
+        i made this yesterday when i was on the plane so its not so good
+      </p>
+
+      <div class="letter">
+        <p>for u</p>
+
+        <p>
+          honestly, i dont even know where to begin, because
+          there are so many things i want to tell you, and
+          sometimes words just dont feel enough to explain
+          what i feel whenever i think about you.
+        </p>
+
+        <p>
+          somehow, you became someone special
+          to me. u started becoming the person who could make
+          my day better without even trying. a simple conversation
+          with you, a little smile, a random message, or even the
+          smallest thing about you could make me happy in ways
+          you probably dont realize
+        </p>
+
+        <p>
+          i like you. i like you more than I know how to explain.
+          i like the way you make me smile for no reason, the way
+          you randomly pop into my thoughts, and the way an ordinary
+          day can feel a little more beautiful just because youre
+          part of it.
+        </p>
+
+        <p>
+          and the truth is, i dont just want to be someone who
+          tells you sweet words. i want to be someone who shows
+          you that you matter. someone who listens when you need
+          to talk, supports you when things get difficult
+          and reminds you that you dont
+          have to face everything alone.
+        </p>
+
+        <p>
+          i want to know the little things about you. your favorite
+          songs, the things that make you laugh until your stomach
+          hurts, the things that worry you, your dreams, your random
+          stories, and even the little details you think nobody
+          notices. i want to keep learning about you, one day at a
+          time.
+        </p>
+
+        <p>
+          it doesnt really feel right to ask you something like this 
+          online because i feel like some things are better said in person
+          and id rather be able to tell you how i feel looking at you instead 
+          of through a screen, i wanna be able to make those posters for you
+          where we can be right next to each other, but i also didnt want to keep 
+          this feelings to myself without letting you know
+        </p>
+
+        <p>
+          i want us to laugh at the dumbest things, make silly
+          memories, encourage each other, talk about our days,
+          and create little moments that become our favorite
+          memories someday. i want to be someone you can feel
+          comfortable being yourself around.
+        </p>
+
+        <p>
+          if you ever have a bad day, i hope i can be one of the
+          reasons you smile again. if youre excited about something,
+          i want to hear all about it. if youre sad, i want to listen
+          instead of making you feel like you have to hide it.
+          and if you need space, i want to respect that too
+        </p>
+
+        <p>
+          im not asking you to be perfect. im not expecting every
+          day to be a fairytale. i just want something real with you,
+          something we can build slowly with trust, effort, and
+          genuine feelings.
+        </p>
+
+        <p>
+          maybe i get shy sometimes. maybe i dont always know the
+          right thing to say. but i hope this little website i made helps
+          me tell you what my heart has been trying to say for a while
+          you are special to me, and i really, really like you
+        </p>
+
+        <p>
+          so if youre willing to give me a chance, id love to make
+          you happy, make memories with you, and see where this
+          beautiful little beginning takes us. not just today, when
+          everything feels exciting, but through all the ordinary
+          days that come after this too.
+        </p>
+
+        <p>
+          thank you for giving me a reason
+          to smile at my phone like an idiot hehe, n thank you for
+          making me brave enough to ask you this question.
+        </p>
+
+        <p>
+          i dont know what the future holds, but i know id be
+          really happy to have you in my life and to discover it
+          together, one little moment at a time.
+        </p>
+
+        <p>
+          soooo, one last time, from the bottom of my heart
+          i love you so much, and I hope I can make you feel
+          as special as you make me feel 💗
+        </p>
+
+        <p class="signature">
+          with all my affection,<br>
+          your hopefully-future boyfriend 🧸💌
+        </p>
+      </div>
+
+      <p style="margin-top: 25px;">
+        iloveyouuuuuu 💕
+      </p>
+
+      <button class="restart" onclick="restartPage()">
+        read it again 💌
+      </button>
+    </section>
+
+  </main>
+
+  <script>
+    let clicks = 0;
+    let buttonScale = 1;
+
+    const questionScreen =
+      document.getElementById("questionScreen");
+
+    const finalScreen =
+      document.getElementById("finalScreen");
+
+    const buttons = document.querySelectorAll(".yes");
+
+    function sayYes() {
+      clicks++;
+
+      // Make both YES buttons grow with every click.
+      buttonScale *= 1.35;
+
+      buttons.forEach((button) => {
+        button.style.transform = `scale(${buttonScale})`;
+      });
+
+      // Add more hearts as the excitement builds.
+      for (let i = 0; i < 5; i++) {
+        createHeart();
+      }
+
+      // Reveal the love letter after five clicks.
+      if (clicks >= 5) {
+        questionScreen.classList.add("hidden");
+        finalScreen.classList.remove("hidden");
+
+        document.getElementById("mainCard")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+
+        for (let i = 0; i < 35; i++) {
+          setTimeout(createHeart, i * 80);
+        }
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      const heartTypes = ["💗", "💖", "💕", "💘", "💝", "❤️"];
+      heart.textContent =
+        heartTypes[Math.floor(Math.random() * heartTypes.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (18 + Math.random() * 25) + "px";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 7500);
+    }
+
+    function restartPage() {
+      clicks = 0;
+      buttonScale = 1;
+
+      buttons.forEach((button) => {
+        button.style.transform = "scale(1)";
+      });
+
+      finalScreen.classList.add("hidden");
+      questionScreen.classList.remove("hidden");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // A few hearts floating in the background.
+    setInterval(createHeart, 900);
+  </script>
+
+</body>
+</html>
